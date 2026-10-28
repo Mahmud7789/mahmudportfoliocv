@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom print styles for pristine 1-2 page PDF / paper export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+  a {
+    text-decoration: underline !important;
+    color: #1d4ed8 !important;
+  }
+}
